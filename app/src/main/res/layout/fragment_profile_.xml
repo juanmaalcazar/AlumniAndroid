@@ -6,10 +6,101 @@
     android:background="@color/colorPrimary"
     tools:context=".Fragments.Profile_Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="200dp"
+        android:src="@drawable/background_color_circle_selector" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:src="?attr/actionModeShareDrawable" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:src="?android:attr/textSelectHandle" />
+
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="18dp"
+        android:text="Nombre Alumno" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="40dp"
+        android:text="User Name" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="170dp"
+        android:text="Descripcion breve del usuario is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="75dp"
+        android:text="correodelcev@cev.com" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="280dp"
+        android:src="@android:drawable/ic_dialog_email" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="75dp"
+        android:text="tel: 987 65 43 21" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="300dp"
+        android:src="@android:drawable/ic_dialog_email" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PROFILE FRAGMENT" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="128dp"
+        android:layout_marginRight="128dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+
+            android:text="Cerrar Sesion" />
+    </LinearLayout>
 
 </FrameLayout>
