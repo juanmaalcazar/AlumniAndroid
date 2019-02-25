@@ -5,12 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.PanelFragments.Notes_Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Evaluacion"
+        android:layout_marginTop="70dp"
+        android:textAlignment="center"
+        android:textSize="20dp"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="70dp"
+        android:src="?attr/actionModeShareDrawable" />
+
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="EDITAR AQUI LAS NOTAS" />
+        android:layout_marginTop="110dp">
+
+    </ListView>
+
 
 </FrameLayout>
