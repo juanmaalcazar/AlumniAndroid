@@ -7,7 +7,6 @@ import com.example.alumnos.alumni.Models.Event;
 import com.example.alumnos.alumni.Models.JsonRespone;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,8 +20,8 @@ import static com.example.alumnos.alumni.Fragments.Events_fragment.eventsArrayLi
 
 public class GlobalRequests {
 
-    //String URL = "http://alumni.vanadis.es/alumni/public/index.php/api/";
-    String URL = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
+   // String URL = "http://alumni.vanadis.es/alumni/public/index.php/api/";
+    String URL = "http://10.0.2.2:8888/ProyectoAlumni-master/public/api/";
     ApiAlumni api;
     Retrofit retrofit;
     private SharedPreferences prefs;
@@ -76,7 +75,7 @@ public class GlobalRequests {
                         Integer size =eventsArrayList.size();
                         Log.d ( "TAMAÑO DEL ARRAY", String.valueOf(size));
                         Log.d ( "REQUEST STATE", "FIN DE LA PETICION");
-                        Collections.reverse(eventsArrayList);
+
                         listener.onGetEventsFinish ();
 
                         break;

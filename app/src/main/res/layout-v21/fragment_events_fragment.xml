@@ -10,28 +10,12 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:layout_marginTop="2dp"
-        android:background="#009EAD">
-
-
-        <EditText
-            android:hint=" buscar..."
-            android:background="#ffff"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
 
     <ListView
         android:id="@+id/eventsListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="55dp"/>
+        android:layout_marginTop="1dp"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatBtn"

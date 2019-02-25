@@ -7,17 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-import com.example.alumnos.alumni.Api.GlobalRequests;
 import com.example.alumnos.alumni.Fragments.Events_fragment;
-import com.example.alumnos.alumni.Fragments.Panel_Fragment;
+import com.example.alumnos.alumni.Fragments.PanelFragments.Panel_Fragment;
 import com.example.alumnos.alumni.Fragments.Profile_Fragment;
 import com.example.alumnos.alumni.Fragments.UsersFragment;
-import com.example.alumnos.alumni.Models.Event;
 import com.example.alumnos.alumni.R;
-
-import java.util.ArrayList;
 
 
 public class MainMenuActivity extends AppCompatActivity {

@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.Register_Activity" />
-        <activity android:name=".Calendar_Activity" />
         <activity android:name=".Eventos_Activity" />
         <activity
             android:name=".Activities.MainMenuActivity"

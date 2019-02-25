@@ -74,12 +74,10 @@ public class  MyAdapter extends BaseAdapter {
         TextView textViewDescript = (TextView)v.findViewById(R.id.descriptionEvent);
         ImageView eventImage = (ImageView)v.findViewById(R.id.imageListEvent);
         //SET ALL ELEMENTS OF LIST
-        Picasso.get().load(currentImage).into((eventImage));
-        textViewDescript.setText(currentName);
-        textViewTitle.setText(description);
-
+            Picasso.get().load(currentImage).into((eventImage));
+            textViewDescript.setText(currentName);
+            textViewTitle.setText(description);
         return  v;
-
 
     }
 }

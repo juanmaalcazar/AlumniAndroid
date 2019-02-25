@@ -125,6 +125,9 @@
     <string name="titulo_del_evento">Titulo del evento</string>
     <string name="fehca_del_evento">Fehca del evento</string>
     <string name="todo">TODO</string>
+    <string name="notas">Notas</string>
+    <string name="asistencia">Asistencia</string>
+    <string name="calendario">Calendario</string>
 
 
 </resources>

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,8 +20,8 @@ import com.example.alumnos.alumni.Api.GlobalRequests;
 import com.example.alumnos.alumni.Eventos_Activity;
 import com.example.alumnos.alumni.Models.Event;
 import com.example.alumnos.alumni.R;
+
 import java.util.ArrayList;
-import java.util.Collections;
 
 import static com.example.alumnos.alumni.Activities.DetailEventActivity.eventsRecibed;
 
@@ -30,6 +31,8 @@ import static com.example.alumnos.alumni.Activities.DetailEventActivity.eventsRe
 public class Events_fragment extends Fragment {
 
     MyAdapter myAdapter;
+
+    ImageView imageEvent;
 
     public static ArrayList<Event> eventsArrayList = new ArrayList<Event>();
     public static ListView listView;
@@ -48,33 +51,27 @@ public class Events_fragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         Toast.makeText(getActivity().getApplicationContext(), "EVENTOS LANZADOS!!!", Toast.LENGTH_SHORT).show();
 
-
         GlobalRequests globalRequests = new GlobalRequests();
         globalRequests.setGlobalRequestsListener ( new GlobalRequests.MyRequestListener () {
             @Override
             public void onGetEventsFinish() {
                 myAdapter = new MyAdapter(getActivity().getApplicationContext(), R.layout.list_item, eventsArrayList);
                 listView.setAdapter(myAdapter);
-
             }
         } );
 
         globalRequests.getlistOfEvents();
-
         addEventBtn = (FloatingActionButton) getView().findViewById(R.id.floatBtn);
         addEventBtn.setOnClickListener(myEventListener);
         listView = (ListView) getView().findViewById(R.id.eventsListView);
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(getActivity().getApplicationContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
-
                 String currentName = String.valueOf(eventsArrayList.get(position));
                 String description = String.valueOf(eventsArrayList.get(position).getDescription());
                 String date =  String.valueOf(eventsArrayList.get(position).getDate ());
-
                 Event eventSended  = eventsArrayList.get (position);
                 eventsRecibed.add(0, eventSended);
                 Toast.makeText(getActivity().getApplicationContext(), "evento enviado!", Toast.LENGTH_SHORT).show();
@@ -83,16 +80,13 @@ public class Events_fragment extends Fragment {
             }
         });
 
-
     }
 
 
     private View.OnClickListener myEventListener = new View.OnClickListener() {
         public void onClick(View v) {
-
             //Toast.makeText(getActivity().getApplicationContext(), "CLICK!", Toast.LENGTH_SHORT).show();
             goToCreateEventActivity();
-
         }
     };
 
@@ -109,11 +103,6 @@ public class Events_fragment extends Fragment {
         startActivity(intent);
     }
 
-
-    public static void aplicar()
-    {
-
-    }
 
 }
 

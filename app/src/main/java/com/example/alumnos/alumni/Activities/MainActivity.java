@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
     NetworkInfo networkInfo;
     ApiAlumni api;
 
-    //String URL ="http://alumni.vanadis.es/alumni/public/index.php/api/";
-    String URL = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
-   // String URL = "http://10.0.2.2:8888/ProyectoAlumni-master/public/api/";
+//    String URL ="http://alumni.vanadis.es/alumni/public/index.php/api/";
+    //http://192.168.6.167/ProyectoAlumni/public/index.php/api/login
+    String URL = "http://10.0.2.2:8888/ProyectoAlumni-master/public/api/";
     EditText email, password;
     Button sendBtn, registerBtn;
 
