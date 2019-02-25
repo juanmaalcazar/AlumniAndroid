@@ -30,10 +30,10 @@ public class Panel_Fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_panel_, container, false);
         ViewPageAdapter viewPageAdapter = new ViewPageAdapter(getFragmentManager());
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
+        ViewPager viewPager = view.findViewById(R.id.viewPager);
         setUpViewPager(viewPager);
 
-        TabLayout tabs = (TabLayout) view.findViewById(R.id.tabPanel);
+        TabLayout tabs = view.findViewById(R.id.tabPanel);
         tabs.setupWithViewPager(viewPager);
 
         return view;
@@ -47,6 +47,7 @@ public class Panel_Fragment extends Fragment {
         adapter.addFragment(new Asistance_Fragment(),"ASISTENCIA");
         adapter.addFragment(new Notes_Fragment(),"NOTAS");
         viewPager.setAdapter(adapter);
+
     }
 
 }

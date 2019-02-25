@@ -3,6 +3,7 @@ package com.example.alumnos.alumni.Fragments.PanelFragments;
 
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,14 +39,16 @@ public class Calendar_Fragment extends Fragment {
     }
 
 
+    @TargetApi(28)
+    @RequiresApi(api = 28)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_calendary, container, false);
 
-         titleDate = (TextView) view.findViewById(R.id.dateOfCalTxt);
-         calendarView = (CalendarView)view.findViewById(R.id.panelsCalendar);
+         titleDate = view.findViewById(R.id.dateOfCalTxt);
+         calendarView = view.findViewById(R.id.panelsCalendar);
 
          setDataCalendar();
          putMarksInCalendar();
@@ -60,6 +63,9 @@ public class Calendar_Fragment extends Fragment {
          });
 
         return  view;
+
+
+
     }
 
 

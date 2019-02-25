@@ -22,8 +22,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class Eventos_Activity extends AppCompatActivity {
 
    // String URL = "http://10.0.2.2:8888/ProyectoAlumni-master/public/api/";
-   String URL ="http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
-  // String URL = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
+     String URL = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
    ApiAlumni api;
 
    EditText title, description, date;
