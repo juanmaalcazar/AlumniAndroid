@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.DetailEventActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/eventImage"
+                android:background="@drawable/background"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="@string/todo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#009EAD"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/detailTile"
+                    android:layout_marginTop="10dp"
+                    android:textColorHint="#ffff"
+                    android:hint="Titulo del evento"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/detailEventDate"
+                    android:layout_marginTop="10dp"
+                    android:textSize="17sp"
+                    android:textColorHint="#ffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha del evento"/>
+            </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_marginTop="40dp"
+                    android:layout_margin="20dp"
+                    android:background="#D7F0F2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/detailDescription"
+                        android:textSize="20dp"
+                        android:textColorHint="#121211"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="top|center"
+                        android:hint="Description" />
+
+                </LinearLayout>
+
+                 <LinearLayout
+                android:layout_marginTop="70dp"
+                android:layout_margin="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:hint="comment here..."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+
+</LinearLayout>

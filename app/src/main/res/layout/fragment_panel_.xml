@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#009EAD"
+    tools:context=".Fragments.Panel_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+<LinearLayout
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="23dp"
+        android:textColor="#fff"
+        android:text="PANEL ALUMNI"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="#009EAD"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:tabTextColor="#fff">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calendario" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Asistencia" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notas" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPagger"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_alignParentTop="true">
+
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

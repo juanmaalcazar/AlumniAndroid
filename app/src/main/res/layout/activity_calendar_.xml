@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="top|center"
+    android:orientation="vertical"
+    tools:context=".Calendar_Activity">
+
+
+    <TextView
+        android:id="@+id/myDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark Your Date"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="23sp"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="330dp">
+        </CalendarView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewCalendar"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFEBEE"
+        android:text="TextView"/>
+
+</LinearLayout>
