@@ -1,24 +1,18 @@
 package com.example.alumnos.alumni.Adapters;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextClock;
 import android.widget.TextView;
 
 import com.example.alumnos.alumni.Models.Event;
-import com.example.alumnos.alumni.Models.JsonRespone;
 import com.example.alumnos.alumni.R;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Callback;
 
 public class  MyAdapter extends BaseAdapter {
 

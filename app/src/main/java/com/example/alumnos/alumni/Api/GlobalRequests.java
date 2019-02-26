@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.example.alumnos.alumni.Models.Event;
-import com.example.alumnos.alumni.Models.JsonRespone;
+import com.example.alumnos.alumni.Models.JsonResponse;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -61,13 +61,13 @@ public class GlobalRequests {
     {
         Log.d("TOKEN", "OBTENIENDOOOOO TOOOOKEN");
 
-        Call<JsonRespone> peticion = api.getEventsList ("type","eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBjZXYuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4iLCJpZF9yb2wiOjEsImlkX3ByaXZhY2l0eSI6MSwiZ3JvdXAiOm51bGx9.qhRcT-k8OEUCVFn8vJLapEGUekZGv13YWY90XqW6qCo");
-        peticion.enqueue(new Callback<JsonRespone>() {
+        Call<JsonResponse> peticion = api.getEventsList ("type","eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBjZXYuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4iLCJpZF9yb2wiOjEsImlkX3ByaXZhY2l0eSI6MSwiZ3JvdXAiOm51bGx9.qhRcT-k8OEUCVFn8vJLapEGUekZGv13YWY90XqW6qCo");
+        peticion.enqueue(new Callback<JsonResponse>() {
             @Override
-            public void onResponse(Call<JsonRespone> call, Response<JsonRespone> response) {
+            public void onResponse(Call<JsonResponse> call, Response<JsonResponse> response) {
 
                 int code = response.body().getCode();
-                JsonRespone json = response.body();
+                JsonResponse json = response.body();
                 Log.d ( "Respuesta del servidor", response.body ().getMessage () );
 
                 switch (code) {
@@ -97,7 +97,7 @@ public class GlobalRequests {
 
             }
             @Override
-            public void onFailure(Call<JsonRespone> call, Throwable t) {
+            public void onFailure(Call<JsonResponse> call, Throwable t) {
 
                 Log.d ("Failture message", "ON FAILTUREEEEEEEEEEE");
                 Log.d ("EL FALLO ES", String.valueOf(t));
@@ -111,13 +111,13 @@ public class GlobalRequests {
     public void deleteEvent()
     {
 
-        Call<JsonRespone> peticion = api.delete (idEvent,"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBjZXYuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4iLCJpZF9yb2wiOjEsImlkX3ByaXZhY2l0eSI6MSwiZ3JvdXAiOm51bGx9.qhRcT-k8OEUCVFn8vJLapEGUekZGv13YWY90XqW6qCo");
-        peticion.enqueue(new Callback<JsonRespone>() {
+        Call<JsonResponse> peticion = api.delete (idEvent,"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBjZXYuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4iLCJpZF9yb2wiOjEsImlkX3ByaXZhY2l0eSI6MSwiZ3JvdXAiOm51bGx9.qhRcT-k8OEUCVFn8vJLapEGUekZGv13YWY90XqW6qCo");
+        peticion.enqueue(new Callback<JsonResponse>() {
             @Override
-            public void onResponse(Call<JsonRespone> call, Response<JsonRespone> response) {
+            public void onResponse(Call<JsonResponse> call, Response<JsonResponse> response) {
 
                 int code = response.body().getCode();
-                JsonRespone json = response.body();
+                JsonResponse json = response.body();
                 Log.d ( "Respuesta del servidor", response.body ().getMessage () );
 
                 switch (code) {
@@ -143,7 +143,7 @@ public class GlobalRequests {
 
             }
             @Override
-            public void onFailure(Call<JsonRespone> call, Throwable t) {
+            public void onFailure(Call<JsonResponse> call, Throwable t) {
 
                 Log.d ("Failture message", "ON FAILTUREEEEEEEEEEE");
                 Log.d ("EL FALLO ES", String.valueOf(t));
@@ -152,5 +152,13 @@ public class GlobalRequests {
 
         });
 
+    }
+
+    private void goToCreateEventActivity()
+    {
+
+
+        //Intent intent = new Intent(this, MainMenuActivity.class);
+        //startActivity(intent);
     }
 }

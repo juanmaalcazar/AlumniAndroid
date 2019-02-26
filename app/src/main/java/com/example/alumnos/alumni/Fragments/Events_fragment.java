@@ -69,7 +69,7 @@ public class Events_fragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(getActivity().getApplicationContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
-                //Integer id = Integer.valueOf()
+                Integer idEvent = Integer.valueOf(eventsArrayList.get(position).getId());
                 String currentName = String.valueOf(eventsArrayList.get(position));
                 String description = String.valueOf(eventsArrayList.get(position).getDescription());
                 String date =  String.valueOf(eventsArrayList.get(position).getDate ());

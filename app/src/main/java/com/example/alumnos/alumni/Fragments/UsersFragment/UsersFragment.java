@@ -28,24 +28,8 @@ public class UsersFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_users, container, false);
-        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(getFragmentManager());
-        ViewPager viewPager = view.findViewById(R.id.viewPager);
-        setUpViewPager(viewPager);
-        TabLayout tabs = view.findViewById(R.id.tabPanelUsers);
-        tabs.setupWithViewPager(viewPager);
+
 
         return view;
     }
-
-
-    private void setUpViewPager(ViewPager viewPager)
-    {
-        ViewPageAdapter adapter = new ViewPageAdapter(getFragmentManager());
-        adapter.addFragment(new AllUsersFragment (),"Todos");
-        adapter.addFragment(new GroupsFragment (),"Grupos");
-        adapter.addFragment(new UsersFragment (),"Amigos");
-        adapter.addFragment(new UsersRequestsFragment (),"Solicitudes");
-        viewPager.setAdapter(adapter);
-    }
-
 }

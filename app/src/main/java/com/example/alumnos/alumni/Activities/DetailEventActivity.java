@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.alumnos.alumni.Adapters.MyAdapter;
 import com.example.alumnos.alumni.Api.GlobalRequests;
+import com.example.alumnos.alumni.Eventos_Activity;
 import com.example.alumnos.alumni.Models.Event;
 import com.example.alumnos.alumni.R;
 import com.squareup.picasso.Picasso;
@@ -30,6 +31,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+
+import static android.app.PendingIntent.getActivity;
 
 public class DetailEventActivity extends AppCompatActivity {
 
@@ -61,7 +64,7 @@ public class DetailEventActivity extends AppCompatActivity {
         date.setTextColor(Color.parseColor("#FFFFFF"));
         description.setText(eventsRecibed.get (0).getDescription ());
         Picasso.get().load(eventsRecibed.get (0).getImage ()).into((eventImage));
-        eventsRecibed.remove(0);
+        //eventsRecibed.remove(0);
 
         borrarBtn = findViewById(R.id.deleteBtn);
         borrarBtn.setOnClickListener(deleteListener);
@@ -72,26 +75,27 @@ public class DetailEventActivity extends AppCompatActivity {
     private View.OnClickListener deleteListener = new View.OnClickListener() {
         public void onClick(View v) {
 
-            idEvent = eventsRecibed.get(0).getId();
 
-            Log.d("","El id del EVENTO es " + idEvent);
+
+            Log.d("***","El id del EVENTO es " + eventsRecibed.get(0).getId());
+            idEvent = eventsRecibed.get(0).getId();
 
             AlertDialog.Builder adb=new AlertDialog.Builder(DetailEventActivity.this);
             adb.setTitle("Delete?");
             adb.setMessage("Are you sure you want to delete ");
             adb.setNegativeButton("Cancel", null);
-            adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-
-                    //GlobalRequests globalRequests = new GlobalRequests();
-                    //globalRequests.deleteEvent();
-
-                }});
+            adb.setPositiveButton("Ok", new AlertDialog.OnClickListener()
+            {
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    GlobalRequests globalRequests = new GlobalRequests();
+                    globalRequests.deleteEvent();
+                }
+            });
             adb.show();
+
         }
     };
-
-
 
 
 }

@@ -49,12 +49,11 @@ public class MainMenuActivity extends AppCompatActivity {
                     break;
 
                 case R.id.navigation_users:
-<<<<<<< HEAD
+
                     Log.d ( "4:", "Intentando usuarios......" );
                     fragment =  new UsersFragment ();
-=======
+
                     fragment =  new UsersFragment();
->>>>>>> Correccion Navigation
                     fragmentTransaction = true;
                     fragmentPanel.destroy();
 

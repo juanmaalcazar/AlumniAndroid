@@ -1,6 +1,6 @@
 package com.example.alumnos.alumni.Api;
 
-import com.example.alumnos.alumni.Models.JsonRespone;
+import com.example.alumnos.alumni.Models.JsonResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -15,24 +15,24 @@ public interface ApiAlumni {
     @FormUrlEncoded
 
     @POST("login")
-    Call<JsonRespone> login(@Field("email") String email, @Field("password") String password);
+    Call<JsonResponse> login(@Field("email") String email, @Field("password") String password);
 
     @FormUrlEncoded
     @POST("register")
-    Call<JsonRespone> register(@Field("email") String email, @Field("password") String password);
+    Call<JsonResponse> register(@Field("email") String email, @Field("password") String password);
 
 
     @FormUrlEncoded
     @POST("createevent")
-    Call<String> createEvent(@Field("title") String title, @Field("description") String description, @Field("id_type") Integer id_type, @Field("id_group[1]") Integer id_group, @Header("Authorization")String authHeader);
+    Call<JsonResponse> createEvent(@Field("title") String title, @Field("description") String description, @Field("id_type") int id_type, @Field("id_group[1]") int id_group, @Header("Authorization")String authHeader);
 
 
     @GET("eventsandroid")
-    Call<JsonRespone> getEventsList(@Query("type") String type, @Header("Authorization")String authHeader);
+    Call<JsonResponse> getEventsList(@Query("type") String type, @Header("Authorization")String authHeader);
 
     @FormUrlEncoded
 
     @POST("deleteevent")
-    Call<JsonRespone> delete(@Field("id") Integer id, @Header("Authorization")String authHeader);
+    Call<JsonResponse> delete(@Field("id") Integer id, @Header("Authorization")String authHeader);
 
 }

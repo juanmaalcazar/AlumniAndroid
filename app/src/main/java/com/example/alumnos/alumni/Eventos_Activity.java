@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.alumnos.alumni.Api.ApiAlumni;
+import com.example.alumnos.alumni.Models.JsonResponse;
 
 import java.io.IOException;
 
@@ -55,44 +56,48 @@ public class Eventos_Activity extends AppCompatActivity {
 
     private View.OnClickListener send = new View.OnClickListener() {
         public void onClick(View v) {
-            createEvent ( v );
+            createEvent();
         }
     };
 
 
 
-    public void createEvent(View view) {
+    public void createEvent() {
 
-        Call<String> peticion = api.createEvent (title.getText ().toString (),description.getText ().toString (),1,1,"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJtaWd1ZWxfaGVyZWRpYV9hcHBzMW1hMTcxOEBjZXYuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4iLCJpZF9yb2wiOjEsImlkX3ByaXZhY2l0eSI6MSwiZ3JvdXAiOm51bGx9.Lv2qTDtZdRsIeDs03zSXrEx8nJ4MkRUVFOlJNVRta88");
+        Call<JsonResponse> peticion = api.createEvent (title.getText ().toString (),description.getText ().toString (),1,1,"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBjZXYuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4iLCJpZF9yb2wiOjEsImlkX3ByaXZhY2l0eSI6MSwiZ3JvdXAiOm51bGx9.qhRcT-k8OEUCVFn8vJLapEGUekZGv13YWY90XqW6qCo");
 
-        peticion.enqueue(new Callback<String>() {
+        peticion.enqueue(new Callback<JsonResponse>() {
             @Override
 
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<JsonResponse> call, Response<JsonResponse> response) {
+
+                Log.d("**", "RESPUESTA " + response.body());
+                JsonResponse json = response.body();
+                int code = response.body().getCode();
 
 
-                String resultado = response.body ();
+                switch (code) {
+                    case 200:
+                        String message = response.body ().getMessage ();
+                        Log.d("RESOUESTA 200::", message);
+                        break;
+                    case 400:
+                        // Toast.makeText ( MainActivity.this, errorMessage, Toast.LENGTH_SHORT ).show ();
+                        String errorMessage = response.body ().getMessage ();
+                        Log.d("RESOUESTA ERROR::", errorMessage);
+                        break;
 
-                if (resultado == null)
-                {
-                    Log.d ( "null","esta entrando en nullo" );
-                    try {
-                        resultado = response.errorBody ().string ();
-                        Toast.makeText(Eventos_Activity.this, resultado, Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
-                        e.printStackTrace ();
-                    }
-                }else {
-                    Log.d ( "elseeeee:",resultado );
-                    Toast.makeText(Eventos_Activity.this, "dame el tokeeeen", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(Eventos_Activity.this, resultado, Toast.LENGTH_SHORT).show();
-                    //goToMenu ();
+                    default:
+                        //Toast.makeText ( MainActivity.this, errrorMessage, Toast.LENGTH_SHORT ).show ();
+                        String defaultmsg = response.body ().getMessage ();
+                        Log.d("RESOUESTA DEFAULT :", defaultmsg);
                 }
             }
 
 
+
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<JsonResponse> call, Throwable t) {
                 Toast.makeText(Eventos_Activity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }

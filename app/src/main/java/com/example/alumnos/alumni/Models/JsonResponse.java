@@ -4,7 +4,7 @@ import com.example.alumnos.alumni.Models.Data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class JsonRespone {
+public class JsonResponse {
 
     @SerializedName ("code")
     @Expose

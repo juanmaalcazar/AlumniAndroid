@@ -2,7 +2,6 @@ package com.example.alumnos.alumni.Activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.alumnos.alumni.Api.ApiAlumni;
-import com.example.alumnos.alumni.Models.JsonRespone;
+import com.example.alumnos.alumni.Models.JsonResponse;
 import com.example.alumnos.alumni.R;
 
 import retrofit2.Call;
@@ -24,8 +23,6 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    NetworkInfo networkInfo;
     ApiAlumni api;
 
     //String URL ="http://alumni.vanadis.es/alumni/public/index.php/api/";
@@ -87,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View view) {
 
-        Call<JsonRespone> peticion = api.login (email.getText().toString(), password.getText().toString());
-        peticion.enqueue(new Callback<JsonRespone>() {
+        Call<JsonResponse> peticion = api.login (email.getText().toString(), password.getText().toString());
+        peticion.enqueue(new Callback<JsonResponse>() {
             @Override
-            public void onResponse(Call<JsonRespone> call, Response<JsonRespone> response) {
+            public void onResponse(Call<JsonResponse> call, Response<JsonResponse> response) {
 
                 int code = response.body ().getCode ();
-                JsonRespone json = response.body();
+                JsonResponse json = response.body();
 
                 Log.d ( "Respuesta del servidor", response.body ().getMessage () );
                 Log.d ( "Respuesta del servidor", " " + code );
@@ -137,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             @Override
-            public void onFailure(Call<JsonRespone> call, Throwable t) {
+            public void onFailure(Call<JsonResponse> call, Throwable t) {
 
                 Log.d ("Failture message", "FAILTUREEEEEEE CASEEEEEEEEEEEEEEEEEEE");
                 String error = "Failtuure :algo ha salido mal al captar code 400:";
