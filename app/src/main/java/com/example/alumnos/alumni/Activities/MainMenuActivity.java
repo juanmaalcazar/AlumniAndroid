@@ -17,35 +17,49 @@ import com.example.alumnos.alumni.R;
 
 public class MainMenuActivity extends AppCompatActivity {
 
+    Panel_Fragment fragmentPanel;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
             boolean fragmentTransaction = false;
             Fragment fragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_events:
-                    Log.d ( "1:", "ejecutando" );
                     fragment =  new Events_fragment();
                     fragmentTransaction = true;
+                    fragmentPanel.destroy();
+
+
                     break;
                 case R.id.navigation_panel:
 
-                    fragment =  new Panel_Fragment();
+                    fragment = fragmentPanel;
                     fragmentTransaction = true;
+                    Log.d("****", "NAVIGATION PANEL");
                     break;
                 case R.id.navigation_profile:
 
                     fragment =  new Profile_Fragment();
                     fragmentTransaction = true;
+                    fragmentPanel.destroy();
+
                     break;
 
                 case R.id.navigation_users:
+<<<<<<< HEAD
                     Log.d ( "4:", "Intentando usuarios......" );
                     fragment =  new UsersFragment ();
+=======
+                    fragment =  new UsersFragment();
+>>>>>>> Correccion Navigation
                     fragmentTransaction = true;
+                    fragmentPanel.destroy();
+
+
+
                     break;
             }
 
@@ -75,8 +89,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 .replace(R.id.content_frame, fragment)
                 .commit();
 
-
-        return;
+        fragmentPanel=new Panel_Fragment();
 
     }
 

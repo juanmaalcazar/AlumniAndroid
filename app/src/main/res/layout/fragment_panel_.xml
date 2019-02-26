@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.PanelFragments.Panel_Fragment"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@android:color/transparent">
 
 
 
@@ -28,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="-1dp"
-        android:background="#fff">
+        android:background="@android:color/transparent">
 
     </android.support.v4.view.ViewPager>
 

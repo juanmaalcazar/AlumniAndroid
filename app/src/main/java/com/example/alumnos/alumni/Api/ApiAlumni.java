@@ -30,4 +30,9 @@ public interface ApiAlumni {
     @GET("eventsandroid")
     Call<JsonRespone> getEventsList(@Query("type") String type, @Header("Authorization")String authHeader);
 
+    @FormUrlEncoded
+
+    @POST("deleteevent")
+    Call<JsonRespone> delete(@Field("id") Integer id, @Header("Authorization")String authHeader);
+
 }

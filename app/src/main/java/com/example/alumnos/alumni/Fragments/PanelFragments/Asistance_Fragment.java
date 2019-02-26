@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,8 @@ public class Asistance_Fragment extends Fragment {
 
     PieChart pieChart;
 
+    View view;
+
 
 
     public Asistance_Fragment() {
@@ -46,10 +49,20 @@ public class Asistance_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_asistance, container, false);
+        view = inflater.inflate(R.layout.fragment_asistance, container, false);
 
+
+        initFragment();
+        return  view;
+
+    }
+
+
+
+
+    public void initFragment()
+    {
         pieChart = view.findViewById(R.id.idPieChart);
-
         pieChart.setDescription("Asistencia ");
         //rotación del PieChart
         pieChart.setRotationEnabled(true);
@@ -67,9 +80,6 @@ public class Asistance_Fragment extends Fragment {
         //pieChart.setDrawEntryLabels(true);
 
         addDataSet();
-
-        return  view;
-
     }
 
     private void addDataSet() {ArrayList<PieEntry> yEntrys = new ArrayList<>();

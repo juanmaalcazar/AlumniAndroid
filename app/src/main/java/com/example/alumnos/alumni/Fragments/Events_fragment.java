@@ -61,7 +61,7 @@ public class Events_fragment extends Fragment {
         } );
 
         globalRequests.getlistOfEvents();
-        addEventBtn = (FloatingActionButton) getView().findViewById(R.id.floatBtn);
+        addEventBtn = getView().findViewById(R.id.floatBtn);
         addEventBtn.setOnClickListener(myEventListener);
         listView = (ListView) getView().findViewById(R.id.eventsListView);
 
@@ -69,6 +69,7 @@ public class Events_fragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(getActivity().getApplicationContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
+                //Integer id = Integer.valueOf()
                 String currentName = String.valueOf(eventsArrayList.get(position));
                 String description = String.valueOf(eventsArrayList.get(position).getDescription());
                 String date =  String.valueOf(eventsArrayList.get(position).getDate ());

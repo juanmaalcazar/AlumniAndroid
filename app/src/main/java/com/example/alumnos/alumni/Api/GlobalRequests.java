@@ -16,6 +16,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+import static com.example.alumnos.alumni.Activities.DetailEventActivity.idEvent;
 import static com.example.alumnos.alumni.Fragments.Events_fragment.eventsArrayList;
 
 
@@ -84,6 +85,52 @@ public class GlobalRequests {
                         break;
                     case 400:
                        // Toast.makeText ( MainActivity.this, errorMessage, Toast.LENGTH_SHORT ).show ();
+                        String errorMessage = response.body ().getMessage ();
+                        Log.d("RESOUESTA 200::", errorMessage);
+                        break;
+
+                    default:
+                        //Toast.makeText ( MainActivity.this, errrorMessage, Toast.LENGTH_SHORT ).show ();
+                        String defaultmsg = response.body ().getMessage ();
+                        Log.d("RESOUESTA 200::", defaultmsg);
+                }
+
+            }
+            @Override
+            public void onFailure(Call<JsonRespone> call, Throwable t) {
+
+                Log.d ("Failture message", "ON FAILTUREEEEEEEEEEE");
+                Log.d ("EL FALLO ES", String.valueOf(t));
+
+            }
+
+        });
+
+    }
+
+    public void deleteEvent()
+    {
+
+        Call<JsonRespone> peticion = api.delete (idEvent,"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBjZXYuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4iLCJpZF9yb2wiOjEsImlkX3ByaXZhY2l0eSI6MSwiZ3JvdXAiOm51bGx9.qhRcT-k8OEUCVFn8vJLapEGUekZGv13YWY90XqW6qCo");
+        peticion.enqueue(new Callback<JsonRespone>() {
+            @Override
+            public void onResponse(Call<JsonRespone> call, Response<JsonRespone> response) {
+
+                int code = response.body().getCode();
+                JsonRespone json = response.body();
+                Log.d ( "Respuesta del servidor", response.body ().getMessage () );
+
+                switch (code) {
+                    case 200:
+                        String message = response.body ().getMessage ();
+                        Log.d("RESOUESTA 200::", message);
+                        Log.d ( "REQUEST STATE", "FIN DE LA PETICION");
+
+                        listener.onGetEventsFinish ();
+
+                        break;
+                    case 400:
+                        // Toast.makeText ( MainActivity.this, errorMessage, Toast.LENGTH_SHORT ).show ();
                         String errorMessage = response.body ().getMessage ();
                         Log.d("RESOUESTA 200::", errorMessage);
                         break;

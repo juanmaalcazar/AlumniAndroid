@@ -9,7 +9,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
@@ -32,10 +34,14 @@ public class Calendar_Fragment extends Fragment {
     TextView titleDate;
     CalendarView calendarView;
     String calendarDates;
+    View view;
 
 
     public Calendar_Fragment() {
         // Required empty public constructor
+        Log.d("****", "CALENDAR constructor");
+
+
     }
 
 
@@ -45,29 +51,38 @@ public class Calendar_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_calendary, container, false);
+        view = inflater.inflate(R.layout.fragment_calendary, container, false);
 
-         titleDate = view.findViewById(R.id.dateOfCalTxt);
-         calendarView = view.findViewById(R.id.panelsCalendar);
+        Log.d("****", "CALENDAR CREATE");
 
-         setDataCalendar();
-         putMarksInCalendar();
-
-         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-             @Override
-             public void onSelectedDayChange(CalendarView view, int year, int month,
-                                             int dayOfMonth) {
-                calendarDates = ""+dayOfMonth+"/"+ month +"/" + year;
-                titleDate.setText(calendarDates);
-             }
-         });
-
+        initFragment();
         return  view;
 
 
 
     }
 
+    @RequiresApi(api = 28)
+    public void initFragment(){
+
+        titleDate = view.findViewById(R.id.dateOfCalTxt);
+        calendarView = view.findViewById(R.id.panelsCalendar);
+
+        setDataCalendar();
+        putMarksInCalendar();
+
+
+
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month,
+                                            int dayOfMonth) {
+                calendarDates = ""+dayOfMonth+"/"+ month +"/" + year;
+                titleDate.setText(calendarDates);
+            }
+        });
+
+    }
 
     public void setDataCalendar()
     {

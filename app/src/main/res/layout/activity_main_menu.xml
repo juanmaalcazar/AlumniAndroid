@@ -5,13 +5,15 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.MainMenuActivity">
+    tools:context=".Activities.MainMenuActivity"
+    android:background="@android:color/transparent">
 
 
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
 
     </FrameLayout>
 
