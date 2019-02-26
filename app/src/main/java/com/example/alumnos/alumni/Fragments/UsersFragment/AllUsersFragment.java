@@ -1,4 +1,4 @@
-package com.example.alumnos.alumni.Fragments;
+package com.example.alumnos.alumni.Fragments.UsersFragment;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.alumnos.alumni.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UsersFragment extends Fragment {
+public class AllUsersFragment extends Fragment {
 
 
-    public UsersFragment() {
+    public AllUsersFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class UsersFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_users, container, false);
+        return inflater.inflate ( R.layout.fragment_all_users, container, false );
     }
 
 }

@@ -46,9 +46,6 @@
                     android:hint="Fecha del evento"/>
             </LinearLayout>
 
-
-
-
                 <LinearLayout
                     android:layout_marginTop="40dp"
                     android:layout_margin="20dp"
@@ -77,13 +74,8 @@
                     android:hint="comment here..."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-
                 </LinearLayout>
         </LinearLayout>
-
-
-
-
 
     </ScrollView>
 

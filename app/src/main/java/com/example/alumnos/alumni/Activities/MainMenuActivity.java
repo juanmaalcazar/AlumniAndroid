@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import com.example.alumnos.alumni.Fragments.Events_fragment;
 import com.example.alumnos.alumni.Fragments.PanelFragments.Panel_Fragment;
 import com.example.alumnos.alumni.Fragments.Profile_Fragment;
-import com.example.alumnos.alumni.Fragments.UsersFragment;
+import com.example.alumnos.alumni.Fragments.UsersFragment.UsersFragment;
 import com.example.alumnos.alumni.R;
 
 
@@ -44,7 +44,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
                 case R.id.navigation_users:
                     Log.d ( "4:", "Intentando usuarios......" );
-                    fragment =  new UsersFragment();
+                    fragment =  new UsersFragment ();
                     fragmentTransaction = true;
                     break;
             }
