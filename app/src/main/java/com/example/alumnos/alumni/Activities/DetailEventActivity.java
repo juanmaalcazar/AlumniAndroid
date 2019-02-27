@@ -3,32 +3,20 @@ package com.example.alumnos.alumni.Activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.alumnos.alumni.Adapters.MyAdapter;
 import com.example.alumnos.alumni.Api.GlobalRequests;
-import com.example.alumnos.alumni.Eventos_Activity;
+import com.example.alumnos.alumni.Fragments.Events_fragment;
 import com.example.alumnos.alumni.Models.Event;
 import com.example.alumnos.alumni.R;
 import com.squareup.picasso.Picasso;
-
-import android.content.Context;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
@@ -38,6 +26,7 @@ public class DetailEventActivity extends AppCompatActivity {
 
     public static ArrayList<Event> eventsRecibed = new ArrayList<Event>();
     Button borrarBtn;
+    Events_fragment fragmentEvent;
 
     public static Integer idEvent;
 
@@ -88,6 +77,7 @@ public class DetailEventActivity extends AppCompatActivity {
             {
                 public void onClick(DialogInterface dialog, int which)
                 {
+                    goToMenu();
                     GlobalRequests globalRequests = new GlobalRequests();
                     globalRequests.deleteEvent();
                 }
@@ -96,6 +86,12 @@ public class DetailEventActivity extends AppCompatActivity {
 
         }
     };
+
+    private void goToMenu()
+    {
+        Intent intent = new Intent(this,MainMenuActivity.class);
+        startActivity(intent);
+    }
 
 
 }

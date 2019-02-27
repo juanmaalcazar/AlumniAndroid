@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.example.alumnos.alumni.Activities.DetailEventActivity;
 import com.example.alumnos.alumni.Adapters.MyAdapter;
 import com.example.alumnos.alumni.Api.GlobalRequests;
-import com.example.alumnos.alumni.Eventos_Activity;
+import com.example.alumnos.alumni.Activities.Eventos_Activity;
 import com.example.alumnos.alumni.Models.Event;
 import com.example.alumnos.alumni.R;
 

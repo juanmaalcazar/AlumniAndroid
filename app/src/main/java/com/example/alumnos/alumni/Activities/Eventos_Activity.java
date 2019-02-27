@@ -1,4 +1,4 @@
-package com.example.alumnos.alumni;
+package com.example.alumnos.alumni.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,8 +10,7 @@ import android.widget.Toast;
 
 import com.example.alumnos.alumni.Api.ApiAlumni;
 import com.example.alumnos.alumni.Models.JsonResponse;
-
-import java.io.IOException;
+import com.example.alumnos.alumni.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,7 +40,6 @@ public class Eventos_Activity extends AppCompatActivity {
         date = findViewById(R.id.eventDateEditTxt);
         sendDate = findViewById(R.id.sednDateBtn);
         sendDate.setOnClickListener(send);
-        //createBtn = Butto
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -82,13 +80,11 @@ public class Eventos_Activity extends AppCompatActivity {
                         Log.d("RESOUESTA 200::", message);
                         break;
                     case 400:
-                        // Toast.makeText ( MainActivity.this, errorMessage, Toast.LENGTH_SHORT ).show ();
                         String errorMessage = response.body ().getMessage ();
                         Log.d("RESOUESTA ERROR::", errorMessage);
                         break;
 
                     default:
-                        //Toast.makeText ( MainActivity.this, errrorMessage, Toast.LENGTH_SHORT ).show ();
                         String defaultmsg = response.body ().getMessage ();
                         Log.d("RESOUESTA DEFAULT :", defaultmsg);
                 }

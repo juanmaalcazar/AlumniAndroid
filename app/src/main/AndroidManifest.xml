@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.Register_Activity" />
-        <activity android:name=".Eventos_Activity" />
+        <activity android:name=".Activities.Eventos_Activity" />
         <activity
             android:name=".Activities.MainMenuActivity"
             android:label="@string/title_activity_main_menu" />

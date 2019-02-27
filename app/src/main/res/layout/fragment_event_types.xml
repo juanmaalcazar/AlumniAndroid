@@ -6,10 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
-
-
     <Button
             android:id="@+id/newsEvent"
             android:layout_width="100dp"
@@ -20,11 +16,6 @@
             android:background="@drawable/noticias"
             android:contentDescription="@string/todo"
             android:layout_marginStart="50dp" />
-
-
-
-
-
 
     <Button
         android:id="@+id/jobOfferEvent"

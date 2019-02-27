@@ -126,7 +126,7 @@ public class GlobalRequests {
                         Log.d("RESOUESTA 200::", message);
                         Log.d ( "REQUEST STATE", "FIN DE LA PETICION");
 
-                        listener.onGetEventsFinish ();
+                        //listener.onGetEventsFinish ();
 
                         break;
                     case 400:
