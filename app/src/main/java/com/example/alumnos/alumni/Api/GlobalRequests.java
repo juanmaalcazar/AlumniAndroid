@@ -24,7 +24,7 @@ public class GlobalRequests {
 
    // String URL = "http://alumni.vanadis.es/alumni/public/index.php/api/";
     //String URL = "http://10.0.2.2:8888/ProyectoAlumni-master/public/api/";
-    String URL = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
+    public static String urlVirtual = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
     ApiAlumni api;
     Retrofit retrofit;
     private SharedPreferences prefs;
@@ -41,7 +41,7 @@ public class GlobalRequests {
         this.listener = null;
 
         retrofit = new Retrofit.Builder()
-                .baseUrl(URL)
+                .baseUrl(urlVirtual)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

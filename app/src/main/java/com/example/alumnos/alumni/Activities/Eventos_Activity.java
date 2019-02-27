@@ -19,10 +19,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+import static com.example.alumnos.alumni.Api.GlobalRequests.urlVirtual;
+
 public class Eventos_Activity extends AppCompatActivity {
 
    // String URL = "http://10.0.2.2:8888/ProyectoAlumni-master/public/api/";
-     String URL = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
+     //String URL = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
    ApiAlumni api;
 
    EditText title, description, date;
@@ -43,7 +45,7 @@ public class Eventos_Activity extends AppCompatActivity {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl( URL)
+                .baseUrl(urlVirtual)
                 .addConverterFactory( ScalarsConverterFactory.create())
                 .addConverterFactory( GsonConverterFactory.create())
                 .build();

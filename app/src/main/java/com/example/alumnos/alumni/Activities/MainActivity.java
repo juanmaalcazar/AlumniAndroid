@@ -21,12 +21,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+import static com.example.alumnos.alumni.Api.GlobalRequests.urlVirtual;
+
 public class MainActivity extends AppCompatActivity {
 
     ApiAlumni api;
 
     //String URL ="http://alumni.vanadis.es/alumni/public/index.php/api/";
-    String URL = "http://192.168.6.167/ProyectoAlumni/public/index.php/api/";
     //String URL = "http://10.0.2.2:8888/ProyectoAlumni-master/public/api/";
     EditText email, password;
     Button sendBtn, registerBtn;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(mCorkyListener);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(URL)
+                .baseUrl(urlVirtual)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
