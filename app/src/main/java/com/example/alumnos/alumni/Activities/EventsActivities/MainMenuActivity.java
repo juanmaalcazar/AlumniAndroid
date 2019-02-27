@@ -1,4 +1,4 @@
-package com.example.alumnos.alumni.Activities;
+package com.example.alumnos.alumni.Activities.EventsActivities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,10 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.example.alumnos.alumni.Fragments.Events_fragment;
+import com.example.alumnos.alumni.Fragments.EventsFragments.Events_fragment;
 import com.example.alumnos.alumni.Fragments.PanelFragments.Panel_Fragment;
-import com.example.alumnos.alumni.Fragments.Profile_Fragment;
-import com.example.alumnos.alumni.Fragments.UsersFragment.UsersFragment;
+import com.example.alumnos.alumni.Fragments.ProfileFraments.Profile_Fragment;
+import com.example.alumnos.alumni.Fragments.UsersFragments.UsersFragment;
 import com.example.alumnos.alumni.R;
 
 

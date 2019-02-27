@@ -1,4 +1,4 @@
-package com.example.alumnos.alumni.Activities;
+package com.example.alumnos.alumni.Activities.EventsActivities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

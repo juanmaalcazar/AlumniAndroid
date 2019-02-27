@@ -1,4 +1,4 @@
-package com.example.alumnos.alumni.Fragments.UsersFragment;
+package com.example.alumnos.alumni.Fragments.EventsFragments.CreateEventsFragment;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.alumnos.alumni.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UsersRequestsFragment extends Fragment {
+public class EventTypesFragment4 extends Fragment {
 
 
-    public UsersRequestsFragment() {
+    public EventTypesFragment4() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class UsersRequestsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate ( R.layout.fragment_users_requests, container, false );
+        return inflater.inflate(R.layout.fragment_event_types_fragment4, container, false);
     }
 
 }

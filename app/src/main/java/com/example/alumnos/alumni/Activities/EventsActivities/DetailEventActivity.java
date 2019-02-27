@@ -1,4 +1,4 @@
-package com.example.alumnos.alumni.Activities;
+package com.example.alumnos.alumni.Activities.EventsActivities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.alumnos.alumni.Api.GlobalRequests;
-import com.example.alumnos.alumni.Fragments.Events_fragment;
+import com.example.alumnos.alumni.Fragments.EventsFragments.Events_fragment;
 import com.example.alumnos.alumni.Models.Event;
 import com.example.alumnos.alumni.R;
 import com.squareup.picasso.Picasso;

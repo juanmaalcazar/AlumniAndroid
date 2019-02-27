@@ -1,4 +1,4 @@
-package com.example.alumnos.alumni.Fragments;
+package com.example.alumnos.alumni.Fragments.EventsFragments;
 
 
 import android.content.Intent;
@@ -14,16 +14,16 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.alumnos.alumni.Activities.DetailEventActivity;
+import com.example.alumnos.alumni.Activities.EventsActivities.DetailEventActivity;
 import com.example.alumnos.alumni.Adapters.MyAdapter;
 import com.example.alumnos.alumni.Api.GlobalRequests;
-import com.example.alumnos.alumni.Activities.Eventos_Activity;
+import com.example.alumnos.alumni.Activities.EventsActivities.Eventos_Activity;
 import com.example.alumnos.alumni.Models.Event;
 import com.example.alumnos.alumni.R;
 
 import java.util.ArrayList;
 
-import static com.example.alumnos.alumni.Activities.DetailEventActivity.eventsRecibed;
+import static com.example.alumnos.alumni.Activities.EventsActivities.DetailEventActivity.eventsRecibed;
 
 /**
  * A simple {@link Fragment} subclass.

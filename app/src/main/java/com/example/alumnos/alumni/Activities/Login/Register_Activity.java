@@ -1,4 +1,4 @@
-package com.example.alumnos.alumni.Activities;
+package com.example.alumnos.alumni.Activities.Login;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.alumnos.alumni.Activities.EventsActivities.MainMenuActivity;
 import com.example.alumnos.alumni.Api.ApiAlumni;
 import com.example.alumnos.alumni.Models.JsonResponse;
 import com.example.alumnos.alumni.R;

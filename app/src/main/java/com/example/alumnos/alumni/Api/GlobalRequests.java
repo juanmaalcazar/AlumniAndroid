@@ -16,8 +16,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-import static com.example.alumnos.alumni.Activities.DetailEventActivity.idEvent;
-import static com.example.alumnos.alumni.Fragments.Events_fragment.eventsArrayList;
+import static com.example.alumnos.alumni.Activities.EventsActivities.DetailEventActivity.idEvent;
+import static com.example.alumnos.alumni.Fragments.EventsFragments.Events_fragment.eventsArrayList;
 
 
 public class GlobalRequests {

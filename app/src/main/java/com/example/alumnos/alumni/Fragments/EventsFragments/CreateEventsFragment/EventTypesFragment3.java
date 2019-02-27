@@ -1,24 +1,21 @@
-package com.example.alumnos.alumni.Fragments.UsersFragment;
+package com.example.alumnos.alumni.Fragments.EventsFragments.CreateEventsFragment;
 
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.alumnos.alumni.Adapters.ViewPageAdapter;
 import com.example.alumnos.alumni.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UsersFragment extends Fragment {
+public class EventTypesFragment3 extends Fragment {
 
 
-    public UsersFragment() {
+    public EventTypesFragment3() {
         // Required empty public constructor
     }
 
@@ -26,10 +23,8 @@ public class UsersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_users, container, false);
-
-
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_event_types_fragment3, container, false);
     }
+
 }
